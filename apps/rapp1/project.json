@@ -1,0 +1,16 @@
+{
+  "name": "rapp1",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rapp1/src",
+  "projectType": "application",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/rapp1/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
