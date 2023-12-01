@@ -21,6 +21,22 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "options": {
+        "passWithNoTests": true,
+        "reporters": ["default"]
+      }
+    },
+    "@nx/vite:build": {
+      "options": {
+        "reportCompressedSize": true,
+        "commonjsOptions": {
+          "transformMixedEsModules": true
+        }
+      }
     }
   },
   "namedInputs": {
@@ -77,6 +93,16 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
       }
     }
   ],
